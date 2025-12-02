@@ -1,26 +1,16 @@
 package org.databasequeries;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+// data structures; holds the raw or processed data
 
 public class QueryModel {
-   private QueryModel model;
+    private final String result;
 
-   private final StringProperty query = new SimpleStringProperty("");
-
-   public QueryModel() {
-        this.model = model;
+    public QueryModel(String result) {
+        this.result = result;
     }
 
-    public String getQuery() {
-       return query.get();
+    public String getResult() {
+        return result;
     }
-
-    public void setQuery(String query) {
-        this.query.set(query);
-    }
-
-    public void deleteQuery(String query) {}
-
 
 }

@@ -1,18 +1,32 @@
 package org.databasequeries;
 
-import javafx.scene.layout.Region;
-import javafx.util.Builder;
+import javafx.scene.control.TextArea;
+import java.sql.SQLException;
 
 public class QueryController {
-    private final Builder<Region> viewBuilder;
-    private final QueryInteractor interactor;
+
+    private final QueryDAO dao;
+    private TextArea resultsArea;
+
 
     public QueryController() {
-        QueryModel model = new QueryModel();
-        interactor = new QueryInteractor(model);
+        this.dao = new QueryDAO();
     }
 
-    public Region getView() {
-        return viewBuilder.build();
+    public void setResultsArea(TextArea resultsArea) {
+        this.resultsArea = resultsArea;
+    }
+
+    public void executeQuery(String sqlQuery) throws SQLException {
+        String query = sqlQuery.trim();
+        QueryModel resultModel = dao.executeSql(query);
+
+        if (query.isEmpty()) {
+            resultsArea.setText("Query is empty\n");
+        }
+
+        if (resultsArea != null) {
+            resultsArea.setText(resultModel.getResult());
+        }
     }
 }
