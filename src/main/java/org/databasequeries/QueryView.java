@@ -34,7 +34,7 @@ public class QueryView extends Application {
         // ui components
         Label inputLabel = new Label("Input Query:");
         TextField queryInput = new TextField();
-        queryInput.setPromptText("Enter SELECT, UPDATE, or DELETE query... ");
+        queryInput.setPromptText("Enter SELECT, UPDATE, or DELETE query.. ");
         GridPane.setHgrow(queryInput, Priority.ALWAYS); // make TextField fill available space
 
         Button executeButton = new Button("Execute Query");

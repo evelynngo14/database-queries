@@ -1,8 +1,9 @@
 package org.databasequeries;
 
-// data structures; holds the raw or processed data
+// holds the raw data (query result -> string)
 
 public class QueryModel {
+
     private final String result;
 
     public QueryModel(String result) {
@@ -12,5 +13,4 @@ public class QueryModel {
     public String getResult() {
         return result;
     }
-
 }

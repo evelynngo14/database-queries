@@ -8,8 +8,7 @@ public class QueryDAO {
     private static final String dbUser = "evelyn";
     private static final String dbPass = "Administrator!";
     private static final String url = String.format("jdbc:sqlserver://cisquerydb1.database.windows.net:1433;database=query-app;user=evelyn@cisquerydb1;password=%s;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;", dbPass);
-
-
+    
     public QueryModel executeSql(String sqlQuery) throws SQLException {
         String queryType = getQueryType(sqlQuery);
 
